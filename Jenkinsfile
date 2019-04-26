@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Docker image') {
       steps {
-        sh 'docker build -t demo .'
+        sh '''docker kill demo
+docker build -t demo .'''
       }
     }
     stage('Run docker') {
