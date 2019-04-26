@@ -8,9 +8,7 @@ pipeline {
     }
     stage('Run docker') {
       steps {
-        sh '''docker stop demo fervent
-docker rm demo
-docker run --name=demo -d -t -p 3000:3000 demo'''
+        sh 'docker run --name=demo -d -t -p 3000:3000 demo'
       }
     }
   }
